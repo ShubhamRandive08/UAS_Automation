@@ -1,4 +1,3 @@
-// Shubham Randive helper file
 import { test, expect } from '@playwright/test'
 
 async function validateSignIn(page, email, pass) {
