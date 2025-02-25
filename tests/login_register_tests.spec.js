@@ -1,5 +1,3 @@
-// Shubham Randive
-
 import { test, expect } from '@playwright/test'
 import exp from 'constants';
 const helper = require('../helper')
