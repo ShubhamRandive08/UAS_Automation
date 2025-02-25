@@ -3,7 +3,7 @@ import exp from 'constants';
 const helper = require('../helper')
 
 
-test.describe('Tests for My Project', async () => {
+test.describe('Login_Register_Tests', async () => {
     test('Test No. 1 : Validate All Element of Login Page', async ({ page }) => {
 
         await page.goto('http://127.0.0.1:5502/collage_addmission_process_project/index.html');
@@ -91,7 +91,7 @@ test.describe('Tests for My Project', async () => {
 
     })
 
-    test('Test No. 03 - Validate Register Page All Elements', async ({page}) => {
+    test('Test No. 3 - Validate Register Page All Elements', async ({page}) => {
         await page.goto('http://127.0.0.1:5502/collage_addmission_process_project/index.html');
 
         // await expect(page.locator("//a[@id = 'create-user']").textContent()).toBe('Create')
@@ -134,13 +134,59 @@ test.describe('Tests for My Project', async () => {
             console.error(` Test failed! Expected: "Password", but got: "${password}"`);
         }
 
-        await expect(page.locator("//input[@onclick = 'signUp()']")).toBeVisible();
+        await expect(await page.locator("//input[@onclick = 'signUp()']")).toBeVisible();
 
-        await expect(page.locator("//div[@class= 'text-center mt-4 font-weight-light']")).toHaveText(" Already have an account? Login")
+        await expect(await page.locator("//div[@class= 'text-center mt-4 font-weight-light']")).toHaveText(" Already have an account? Login")
 
-        await expect(page.locator("//a[@id = 'login-btn']")).toBeVisible();
+        await expect(await page.locator("//a[@id = 'login-btn']")).toBeVisible();
         await page.locator("//a[@id = 'login-btn']").click();
-        await expect(page.locator("//div[@class = 'content-wrapper d-flex align-items-center auth px-0']")).toBeVisible();
+        await expect(await page.locator("//div[@class = 'content-wrapper d-flex align-items-center auth px-0']")).toBeVisible();
         await page.close()
+    })
+
+    test('Test No. 4 - Validate Register functionalities', async({page}) => {
+        await page.goto('http://127.0.0.1:5502/collage_addmission_process_project/index.html')
+
+        await expect(page.locator("//a[@id = 'create-user']")).toBeVisible();
+        await page.locator("//a[@id = 'create-user']").click()
+
+        // Validate required field missing result
+        await  page.locator("//input[@onclick = 'signUp()']").click();
+        await expect(await page.locator("//div[@aria-labelledby = 'swal2-title']")).toBeVisible()
+        await expect(await page.locator("//h2[@class= 'swal2-title']")).toHaveText('Oops...')
+        await expect(await page.locator("//div[@class= 'swal2-html-container']")).toHaveText("Please fill all the fields!")
+        await expect(await page.locator("//button[@class= 'swal2-confirm swal2-styled']").textContent()).toBe('OK')
+        await expect(await page.locator("//button[@class= 'swal2-confirm swal2-styled']")).toBeVisible();
+        await page.locator("//button[@class= 'swal2-confirm swal2-styled']").click()
+
+
+        // If user fill exits email
+        await page.locator("//input[@id = 'name']").click()
+        await page.locator("//input[@id = 'name']").fill("Shubham Balavant Randive")
+
+        await page.locator("//input[@id = 'email']").click()
+        await page.locator("//input[@id = 'email']").fill("srandive245@gmail.com")
+        
+        await page.locator("//input[@id = 'username']").click()
+        await page.locator("//input[@id = 'username']").fill("Shubham Randive")
+
+        await page.locator("//input[@id = 'password']").click()
+        await page.locator("//input[@id = 'password']").fill("Kingsr@08")
+
+        await expect(await page.locator("//input[@class = 'btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn']")).toBeVisible()
+        await page.locator("//input[@class = 'btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn']").click();
+
+        await expect(await page.locator("//div[@aria-labelledby = 'swal2-title']")).toBeVisible()
+        await expect(await page.locator("//div[@class = 'swal2-success-ring']")).toBeVisible()
+        await expect(await page.locator("//h2[@class = 'swal2-title']").textContent()).toBe("Success!")
+        await expect(await page.locator("//div[@class = 'swal2-html-container']").textContent()).toBe("Email is already exist...")
+        await expect(await page.locator("//button[@class = 'swal2-confirm swal2-styled']").textContent()).toBe("OK")
+        await expect(await page.locator("//button[@class = 'swal2-confirm swal2-styled']")).toBeVisible()
+        await await page.locator("//button[@class = 'swal2-confirm swal2-styled']").click()
+        
+
+
+        // New registration
+
     })
 })
