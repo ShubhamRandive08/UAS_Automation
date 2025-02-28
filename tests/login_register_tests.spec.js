@@ -187,6 +187,9 @@ test.describe('Login_Register_Tests', async () => {
 
 
         // New registration
+        await page.goto('http://127.0.0.1:5502/collage_addmission_process_project/index.html')
 
+        await expect(page.locator("//a[@id = 'create-user']")).toBeVisible();
+        await page.locator("//a[@id = 'create-user']").click()
     })
 })
