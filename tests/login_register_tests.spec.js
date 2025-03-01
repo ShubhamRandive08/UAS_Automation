@@ -193,5 +193,7 @@ test.describe('Login_Register_Tests', async () => {
         await page.locator("//a[@id = 'create-user']").click()
         // Check merge with main with PR
         // Code
+
+        // Code added By Omkar Patil
     })
 })
