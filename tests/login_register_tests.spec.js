@@ -191,5 +191,7 @@ test.describe('Login_Register_Tests', async () => {
 
         await expect(page.locator("//a[@id = 'create-user']")).toBeVisible();
         await page.locator("//a[@id = 'create-user']").click()
+        // Check merge with main with PR
+        // Code
     })
 })
