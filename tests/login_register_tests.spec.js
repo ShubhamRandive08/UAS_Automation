@@ -61,7 +61,7 @@ test.describe('Login_Register_Tests', async () => {
         await expect(await page.locator("//div[@class = 'swal2-icon swal2-warning swal2-icon-show']")).toBeVisible()
         await expect(await page.locator("//h2[@class = 'swal2-title']")).toHaveText('Oops...')
         await expect(await page.locator("//div[@class = 'swal2-html-container']")).toHaveText('Please fill all details!')
-        await helper.validateOkButton(page, 'swal2-confirm swal2-styled', 'OK')
+        await helper.validateButton(page, 'swal2-confirm swal2-styled', 'OK')
 
         //If enters the value of username and pass is invalide - Senario No 2 (LOGIN)
         await helper.validateSignIn(page, 'srandive245@gmail.com', 'Kingsr@0');
@@ -73,7 +73,7 @@ test.describe('Login_Register_Tests', async () => {
         await expect(await page.locator("//div[@class = 'swal2-html-container']")).toHaveText("Username and Password are invalid")
 
         // Click on OK button
-        await helper.validateOkButton(page, 'swal2-confirm swal2-styled', 'OK')
+        await helper.validateButton(page, 'swal2-confirm swal2-styled', 'OK')
 
         // Validate if enters correct details   - Senario No 3 (LOGIN)
         await helper.validateSignIn(page, 'srandive245@gmail.com', 'Kingsr@08')
@@ -82,7 +82,7 @@ test.describe('Login_Register_Tests', async () => {
         // await expect(page.locator("//h2[@class = 'swal2-title']").textContent()).toBe("🚀 Login Successful!")
 
         // Click on OK button
-        await helper.validateOkButton(page, 'swal2-confirm swal2-styled', 'OK')
+        await helper.validateButton(page, 'swal2-confirm swal2-styled', 'OK')
         await expect(await page.locator("//div[@class = 'content-wrapper']")).toBeVisible();
 
         await page.waitForTimeout(2000)
