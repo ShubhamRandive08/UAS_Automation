@@ -2,7 +2,6 @@ import { test, expect } from '@playwright/test'
 import exp from 'constants';
 const helper = require('../helper')
 
-
 test.describe('Login_Register_Tests', async () => {
     test('Test No. 1 : Validate All Element of Login Page', async ({ page }) => {
 
