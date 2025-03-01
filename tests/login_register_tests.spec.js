@@ -192,6 +192,7 @@ test.describe('Login_Register_Tests', async () => {
         await expect(page.locator("//a[@id = 'create-user']")).toBeVisible();
         await page.locator("//a[@id = 'create-user']").click()
         // Add some code on KB-Shubham Demo
+        // Add code from KB-Automation
         
     })
 })
