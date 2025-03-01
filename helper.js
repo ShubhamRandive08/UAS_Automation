@@ -16,4 +16,8 @@ async function validateOkButton(page, selector, validateText) {
     await page.locator(`//button[@class = '${selector}']`).click()
 }
 
-module.exports = { validateSignIn, validateOkButton };
+async function validateResponse(page,value) {
+    await expect(await page.locator(`//input[@clas = ${value}]`)).click()
+}
+
+module.exports = { validateSignIn, validateOkButton, validateResponse };
