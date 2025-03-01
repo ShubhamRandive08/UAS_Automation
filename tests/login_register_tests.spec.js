@@ -195,5 +195,6 @@ test.describe('Login_Register_Tests', async () => {
         // Code
 
         // Code added By Omkar Patil
+        // Practice session
     })
 })
