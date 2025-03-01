@@ -1,3 +1,5 @@
+// This code of the methods which is used in all tests
+// Shubham Randive
 import { test, expect } from '@playwright/test'
 
 async function validateSignIn(page, email, pass) {
