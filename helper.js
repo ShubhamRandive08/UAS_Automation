@@ -1,6 +1,3 @@
-// This code of the methods which is used in all tests
-// Shubham Randive 
-
 import { test, expect } from '@playwright/test'
 
 async function validateSignIn(page, email, pass) {
@@ -17,8 +14,7 @@ async function validateOkButton(page, selector, validateText) {
     await page.locator(`//button[@class = '${selector}']`).click()
 }
 
-async function validateResponse(page,value) {
-    await expect(await page.locator(`//input[@clas = ${value}]`)).click()
-}
 
-module.exports = { validateSignIn, validateOkButton, validateResponse };
+
+
+module.exports = { validateSignIn, validateOkButton };
