@@ -1,8 +1,8 @@
 const {test,expect} = require('@playwright/test')
-const helper = require('../../helper')
-const UserLoginData = require('../../test-data/UserLoginData.json');
-const AdminLoginData = require('../../test-data/AdminLoginData.json')
-const {LoginPage} = require('../../PageObject/LoginPage')
+const helper = require('../../../helper')
+const UserLoginData = require('../../../test-data/UserLoginData.json');
+const AdminLoginData = require('../../../test-data/AdminLoginData.json')
+const {LoginPage} = require('../../../PageObject/LoginPage')
 
 test.describe('Login Page Scenarios', () => {
 

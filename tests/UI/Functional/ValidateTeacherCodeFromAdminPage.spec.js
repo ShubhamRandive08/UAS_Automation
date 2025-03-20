@@ -1,9 +1,9 @@
 const {test,expect} = require('@playwright/test')
-const { AdminPage } = require('../../PageObject/AdminPage')
-const { LoginPage } = require('../../PageObject/LoginPage')
-const { LogoutPage } = require('../../PageObject/LogoutPage')
-const { TeacherPage } = require('../../PageObject/TeacherPage')
-const  AdminLoginData  = require('../../test-data/AdminLoginData.json')
+const { AdminPage } = require('../../../PageObject/AdminPage')
+const { LoginPage } = require('../../../PageObject/LoginPage')
+const { LogoutPage } = require('../../../PageObject/LogoutPage')
+const { TeacherPage } = require('../../../PageObject/TeacherPage')
+const  AdminLoginData  = require('../../../test-data/AdminLoginData.json')
 
 test.describe('Admin E2E tests', async () =>{
 

@@ -1,9 +1,9 @@
 const { test, expect } = require('@playwright/test')
-const helper = require('../../helper')
-const { LoginPage } = require('../../PageObject/LoginPage')
-const { TeacherPage } = require('../../PageObject/TeacherPage')
-const { LogoutPage } = require('../../PageObject/LogoutPage')
-const UserLoginData = require('../../test-data/UserLoginData.json')
+const helper = require('../../../helper')
+const { LoginPage } = require('../../../PageObject/LoginPage')
+const { TeacherPage } = require('../../../PageObject/TeacherPage')
+const { LogoutPage } = require('../../../PageObject/LogoutPage')
+const UserLoginData = require('../../../test-data/UserLoginData.json')
 let loginpage;
 
 test.describe('Teacher Page E2E', () => {
