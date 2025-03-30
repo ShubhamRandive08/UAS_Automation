@@ -1,5 +1,3 @@
-// UAS automation project By Shubham Randive
-
 const { test, expect } = require('@playwright/test')
 const { LogoutPage } = require('../PageObject/LogoutPage')
 const { LoginPage } = require('./LoginPage')
