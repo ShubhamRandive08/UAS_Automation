@@ -25,7 +25,7 @@ test.describe('Login Page Scenarios', () => {
     
 
     test('Admin Login scenarios', async ({ browserName,page }) => {
-    if (browserName !== 'firefox') test.skip();
+    // if (browserName !== 'firefox') test.skip();
 
         let loginpage = new LoginPage(page)
         await loginpage.adminLogin( 

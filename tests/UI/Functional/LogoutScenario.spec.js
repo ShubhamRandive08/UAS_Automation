@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test')
-const helper = require('../../helper')
-const { LoginPage } = require('../../PageObject/LoginPage')
-const { LogoutPage } = require('../../PageObject/LogoutPage')
+const helper = require('../../../helper')
+const { LoginPage } = require('../../../PageObject/LoginPage')
+const { LogoutPage } = require('../../../PageObject/LogoutPage')
 // import {LoginPage} from ('../../PageObjectLiginPage')
 
 let loginpage;
@@ -19,7 +19,7 @@ test.describe('Validate Logout Function',{
 
     // Test cases for teacher logout process
     test('Validate Teacher Dashboard Logout Function', async ({ browserName,page }) => {
-    if (browserName !== 'chromium') test.skip();
+    // if (browserName !== 'chromium') test.skip();
 
         const actions = [
             ["󰋜 Dashboard"],
@@ -42,7 +42,7 @@ test.describe('Validate Logout Function',{
 
     // Test cases for the admin logout process
     test('Validate Admin Dashboard Logout Function', async ({ browserName,page }) => {
-    if (browserName !== 'chromium') test.skip();
+    // if (browserName !== 'chromium') test.skip();
 
         const actions = [
             { type: 'logout', menu: "󰋜 Dashboard" },
